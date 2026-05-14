@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Carga la librería de Google Charts -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      // Datos de los equipos de fútbol más exitosos
+      var data = google.visualization.arrayToDataTable([
+        ['Equipo', 'Títulos'],
+        ['Real Madrid', 34],
+        ['Barcelona', 26],
+        ['Manchester United', 20],
+        ['Bayern Munich', 30],
+        ['AC Milan', 18],
+        ['Liverpool', 19],
+        ['Juventus', 36],
+        ['Inter de Milán', 19],
+        ['Ajax', 35],
+        ['Santos', 8],
+        ['Dortmund', 8],
+        ['PSG', 10],
+        ['Benfica', 13],
+        ['Porto', 13],
+        ['Celtic', 51],
+        ['Rangers', 55],
+        ['Galatasaray', 22],
+        ['Olympiacos', 45],
+        ['Shakhtar Donetsk', 13],
+        ['Zenit', 7]
+
+      ]);
+
+      var options = {
+        title: 'Los 20 equipos de futbol mas exitosos',
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <!-- Div donde se dibujará el gráfico -->
+  <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
